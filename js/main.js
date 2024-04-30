@@ -1,4 +1,4 @@
-const griglia = document.querySelector(".container");
+let griglia = document.querySelector(".container");
 
 const btn = document.querySelector("#btn");
 
@@ -21,6 +21,7 @@ btn.addEventListener("click", function(){
         let square = document.createElement("div");
         square.classList.add("square", "red");
         square.addEventListener("click", function(){
+            if (square.classList.contains("red"))
             square.append(contenuto);
             square.classList.add("white");
             square.classList.remove("red");
@@ -28,6 +29,8 @@ btn.addEventListener("click", function(){
         return square
     }
 
+    
 })
+
 
 
