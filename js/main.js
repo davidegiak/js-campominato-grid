@@ -22,7 +22,7 @@ btn.addEventListener("click", function(){
     }
     }
 
-    else if (select.value == "hard"){
+    else {
         for (let i = 1; i <= 49; i++) {
             // let casella = document.createElement("div");
             // casella.classList.add("square", "red");
@@ -45,10 +45,23 @@ btn.addEventListener("click", function(){
         square.classList.add("square", "red");
         btn.classList.add("full");
         square.addEventListener("click", function(){
-            if (square.classList.contains("red"))
-            square.append(contenuto);
-            square.classList.add("white");
-            square.classList.remove("red");
+            if (square.classList.contains("red")){
+                square.append(contenuto);
+                square.classList.add("white");
+                square.classList.remove("red");
+            }
+            else if (square.classList.contains("red", "squareMed")){
+                square.append(contenuto);
+                square.classList.remove("square");
+                square.classList.add("white");
+                square.classList.remove("red");
+            }
+            else if (square.classList.contains("red", "squareHard")){
+                square.append(contenuto);
+                square.classList.remove("square");
+                square.classList.add("white");
+                square.classList.remove("red");
+            }
         } )
         return square
     }
