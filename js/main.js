@@ -1,13 +1,37 @@
 let griglia = document.querySelector(".container");
-
+let select = document.querySelector("#select");
 const btn = document.querySelector("#btn");
 
 btn.addEventListener("click", function(){
-    for (let i = 1; i <= 100; i++) {
-        // let casella = document.createElement("div");
-        // casella.classList.add("square", "red");
-        let casella = quadrato(i)
-        griglia.append(casella);
+    if (select.value == "easy"){
+        for (let i = 1; i <= 100; i++) {
+            // let casella = document.createElement("div");
+            // casella.classList.add("square", "red");
+            let casella = quadrato(i)
+            griglia.append(casella);
+    }
+    }
+    else if(select.value == "medium"){
+        for (let i = 1; i <= 81; i++) {
+            // let casella = document.createElement("div");
+            // casella.classList.add("square", "red");
+            let casella = quadrato(i)
+            griglia.append(casella);
+            casella.classList.add("squareMed")
+            casella.classList.remove("square")
+    }
+    }
+
+    else if (select.value == "hard"){
+        for (let i = 1; i <= 49; i++) {
+            // let casella = document.createElement("div");
+            // casella.classList.add("square", "red");
+            let casella = quadrato(i)
+            griglia.append(casella);
+            casella.classList.add("squareHard");
+            casella.classList.remove("square");
+    }
+    }
     
         // casella.addEventListener("click", function() {
         //     casella.classList.add("white");
@@ -15,7 +39,6 @@ btn.addEventListener("click", function(){
         //     casella.append(i);
         // })
     
-    }
     
     function quadrato(contenuto) {
         let square = document.createElement("div");
@@ -37,15 +60,37 @@ btn.addEventListener("click", function(){
         btn.classList.remove("full");      
         }
         else {
-            for (let i = 1; i <= 100; i++) {
-                // let casella = document.createElement("div");
-                // casella.classList.add("square", "red");
-                let casella = quadrato(i)
-                griglia.append(casella);
+            if (select.value == "easy"){
+                for (let i = 1; i <= 100; i++) {
+                    // let casella = document.createElement("div");
+                    // casella.classList.add("square", "red");
+                    let casella = quadrato(i);
+                    griglia.append(casella);
+            }
+            }
+            else if (select.value == "medium"){
+                for (let i = 1; i <= 81; i++) {
+                    // let casella = document.createElement("div");
+                    // casella.classList.add("square", "red");
+                    let casella = quadrato(i);
+                    griglia.append(casella);
+                    casella.classList.add("squareMed");
+                    casella.classList.remove("square");
+                }
+            }
+            else {
+                for (let i = 1; i <= 49; i++) {
+                    // let casella = document.createElement("div");
+                    // casella.classList.add("square", "red");
+                    let casella = quadrato(i);
+                    griglia.append(casella);
+                    casella.classList.add("squareHard");
+                    casella.classList.remove("square");
+                }
             }
         }
+        
     })
-
     
 })
 
