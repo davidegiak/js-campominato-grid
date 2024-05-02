@@ -3,6 +3,7 @@ let select = document.querySelector("#select");
 const btn = document.querySelector("#btn");
 
 btn.addEventListener("click", function(){
+    griglia.innerHTML ="";
     if (select.value == "easy"){
         for (let i = 1; i <= 100; i++) {
             // let casella = document.createElement("div");
@@ -67,43 +68,43 @@ btn.addEventListener("click", function(){
     }
 
 
-    btn.addEventListener("click", function(){
-        if (btn.classList.contains("full")){   
-        document.querySelector(".container").innerHTML = "";
-        btn.classList.remove("full");      
-        }
-        else {
-            if (select.value == "easy"){
-                for (let i = 1; i <= 100; i++) {
-                    // let casella = document.createElement("div");
-                    // casella.classList.add("square", "red");
-                    let casella = quadrato(i);
-                    griglia.append(casella);
-            }
-            }
-            else if (select.value == "medium"){
-                for (let i = 1; i <= 81; i++) {
-                    // let casella = document.createElement("div");
-                    // casella.classList.add("square", "red");
-                    let casella = quadrato(i);
-                    griglia.append(casella);
-                    casella.classList.add("squareMed");
-                    casella.classList.remove("square");
-                }
-            }
-            else {
-                for (let i = 1; i <= 49; i++) {
-                    // let casella = document.createElement("div");
-                    // casella.classList.add("square", "red");
-                    let casella = quadrato(i);
-                    griglia.append(casella);
-                    casella.classList.add("squareHard");
-                    casella.classList.remove("square");
-                }
-            }
-        }
+    // btn.addEventListener("click", function(){
+    //     if (btn.classList.contains("full")){   
+    //     document.querySelector(".container").innerHTML = "";
+    //     btn.classList.remove("full");      
+    //     }
+    //     else {
+    //         if (select.value == "easy"){
+    //             for (let i = 1; i <= 100; i++) {
+    //                 // let casella = document.createElement("div");
+    //                 // casella.classList.add("square", "red");
+    //                 let casella = quadrato(i);
+    //                 griglia.append(casella);
+    //         }
+    //         }
+    //         else if (select.value == "medium"){
+    //             for (let i = 1; i <= 81; i++) {
+    //                 // let casella = document.createElement("div");
+    //                 // casella.classList.add("square", "red");
+    //                 let casella = quadrato(i);
+    //                 griglia.append(casella);
+    //                 casella.classList.add("squareMed");
+    //                 casella.classList.remove("square");
+    //             }
+    //         }
+    //         else {
+    //             for (let i = 1; i <= 49; i++) {
+    //                 // let casella = document.createElement("div");
+    //                 // casella.classList.add("square", "red");
+    //                 let casella = quadrato(i);
+    //                 griglia.append(casella);
+    //                 casella.classList.add("squareHard");
+    //                 casella.classList.remove("square");
+    //             }
+    //         }
+    //     }
         
-    })
+    // })
     
 })
 
